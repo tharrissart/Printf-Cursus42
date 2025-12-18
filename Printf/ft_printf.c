@@ -6,18 +6,13 @@
 /*   By: thharris <thharris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 22:23:24 by thharris          #+#    #+#             */
-/*   Updated: 2025/12/07 02:47:57 by thharris         ###   ########.fr       */
+/*   Updated: 2025/12/18 03:29:16 by thharris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static	check_string()
-{
-	
-}
-
-int	ft_printf(const char *, )
+int	ft_printf(const char *)
 {
 	
 }
