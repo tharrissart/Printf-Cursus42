@@ -6,51 +6,31 @@
 /*   By: thharris <thharris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 03:12:06 by thharris          #+#    #+#             */
-/*   Updated: 2025/12/18 03:31:29 by thharris         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:20:33 by thharris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int ft_compare(char *c)
+int	ft_execute(char c, va_list args, size_t size)
 {
-	int i;
-	
-	i = 0;
-	return (c[i++] == 'c' || c[i++] == 's' || c[i++] == 'p' || c[i++] == 'd' 
-		|| c[i++] == 'i' || c[i++] == 'u' || c[i++] == 'x' || c[i++] == 'X' 
-		|| c[i++] == '%')
-}
-int ft_execute(char *str, char c, int nbr)
-{
-	if (c =='c')
-		ft_putchar_fd(&str, 1);
-	if (c == 's')
-		ft_putstr_fd(*str, 1);
-	if (c == 'p')
-		return (3);
-	if (c == 'd')
-		return (4);
-	if (c == 'i')
-		ft_atoi(*str);
-	if (c == 'u')
-		return (6);
-	if (c == 'x')
-		return (7);
-	if (c == 'X')
-		return (8);
-	if (c == '%')
-		return (9);
-}
-int ft_putstring(char *str)
-{
-	int i;
-	int count;
-
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (ft_compare)
-	}
+	if (c == 'c')
+		size += ft_putchar_fd(va_arg(args, int), 1);
+	else if (c == 's')
+		size += ft_putstr_fd(va_arg(args, char *), 1);
+	else if (c == 'p')
+		size += pointeur(va_arg(args, unsigned long), 1);
+	else if (c == 'd')
+		size += ft_putnbr_fd(va_arg(args, int), 1);
+	else if (c == 'i')
+		size += ft_putnbr_fd(va_arg(args, int), 1);
+	else if (c == 'u')
+		size += put_unsigned_nbr_fd(va_arg(args, unsigned int), 1);
+	else if (c == 'x')
+		size += basehexa_lower_fd(va_arg(args, int), 1);
+	else if (c == 'X')
+		size += basehexa_upper_fd(va_arg(args, int), 1);
+	else if (c == '%')
+		size += ft_putchar_fd('%', 1);
+	return (size);
 }

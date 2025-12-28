@@ -6,15 +6,16 @@
 /*   By: thharris <thharris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:19:45 by thharris          #+#    #+#             */
-/*   Updated: 2025/11/11 13:15:43 by thharris         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:11:12 by thharris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return (1);
 }
 /* int main()
 {

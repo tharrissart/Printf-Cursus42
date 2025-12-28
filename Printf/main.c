@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thharris <thharris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 16:12:10 by thomas            #+#    #+#             */
-/*   Updated: 2025/12/01 20:54:17 by thharris         ###   ########.fr       */
+/*   Created: 2025/12/23 23:03:19 by thharris          #+#    #+#             */
+/*   Updated: 2025/12/24 00:20:42 by thharris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
+#include <stdio.h>
 
-t_list	*ft_lstnew(void *content)
+int main(void)
 {
-	t_list	*new_node;
+	size_t size;
+	char *ptr = "Bonjours";
 
-	new_node = malloc(sizeof(t_list));
-	if (new_node)
-	{
-		new_node->content = content;
-		new_node->next = NULL;
-	}
-	return (new_node);
+	size = ft_printf("Ze ve des %s taille %d %p\n", "Saussures", 42, &ptr);
+	printf("Ze ve des %s taille %d %p\n", "Saussures", 42, &ptr);
+	printf("%zu", size);
+	return (0);
 }
