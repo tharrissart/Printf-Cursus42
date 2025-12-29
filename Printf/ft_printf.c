@@ -6,7 +6,7 @@
 /*   By: thharris <thharris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 22:23:24 by thharris          #+#    #+#             */
-/*   Updated: 2025/12/24 00:19:54 by thharris         ###   ########.fr       */
+/*   Updated: 2025/12/29 02:25:30 by thharris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 int	ft_printf(const char *str, ...)
 {
-	va_list	args; //Permet de declarer les arguments variable
-	va_start(args, str);
 	unsigned int	i;
-	size_t size;
+	size_t			size;
+	va_list			args;
 
+	va_start(args, str);
 	size = 0;
 	i = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
-			ft_execute(str[++i], args, size);
+			size = ft_execute(str[++i], args, size);
 		else
+		{
 			if (str[i])
 			{
 				ft_putchar_fd(str[i], 1);
 				size++;
 			}
+		}
 		i++;
 	}
 	return (size);
