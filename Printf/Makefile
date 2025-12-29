@@ -6,14 +6,14 @@
 #    By: thharris <thharris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/06 21:53:12 by thharris          #+#    #+#              #
-#    Updated: 2025/12/06 22:39:17 by thharris         ###   ########.fr        #
+#    Updated: 2025/12/29 22:07:47 by thharris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = cc
 FLAGS = -Wall -Werror -Wextra
-SRC = ft_printf.c
+SRC = ft_printf.c ft_utiles.c
 
 LIBFT_PATH = ./libft
 LIBFT = ${LIBFT_PATH}/libft.a

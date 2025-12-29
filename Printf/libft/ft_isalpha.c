@@ -6,7 +6,7 @@
 /*   By: thharris <thharris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:06:08 by thharris          #+#    #+#             */
-/*   Updated: 2025/11/04 10:58:01 by thharris         ###   ########.fr       */
+/*   Updated: 2025/12/29 22:15:26 by thharris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	return ((c <= 90 && c >= 65) || (c >= 97 && c <= 122));
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }
 /* #include <stdio.h>
 int main(void)
