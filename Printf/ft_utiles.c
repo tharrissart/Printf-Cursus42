@@ -6,11 +6,11 @@
 /*   By: thharris <thharris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 21:02:02 by thharris          #+#    #+#             */
-/*   Updated: 2025/12/29 22:03:03 by thharris         ###   ########.fr       */
+/*   Updated: 2026/01/16 10:00:49 by thharris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+
 #include "libftprintf.h"
 
 int	put_unsigned_nbr_fd(unsigned int nbr, int fd)
@@ -36,11 +36,9 @@ int	basehexa_upper_fd(int nbr, int fd)
 		size += ft_putchar_fd('-', fd);
 		nbr *= -1;
 	}
-	if (nbr)
-	{
+	if (nbr >= 16)
 		size += basehexa_upper_fd(nbr / 16, fd);
-		size += ft_putchar_fd(str[nbr % 16], fd);
-	}
+	size += ft_putchar_fd(str[nbr % 16], fd);
 	return (size);
 }
 
@@ -51,16 +49,18 @@ int	basehexa_lower_fd(unsigned long nbr, int fd)
 
 	size = 0;
 	str = "0123456789abcdef";
-	if (nbr)
+	if (nbr >= 16)
 	{
 		size += basehexa_lower_fd(nbr / 16, fd);
-		size += ft_putchar_fd(str[nbr % 16], fd);
 	}
+	size += ft_putchar_fd(str[nbr % 16], fd);
 	return (size);
 }
 
 int	pointeur(unsigned long ptr, int fd,size_t size)
 {
+	if (!ptr)
+		return(write(1, "(nil)", 5), 5);
 	write(fd, "0x", 2);
 	size = basehexa_lower_fd(ptr, fd) + 2;
 	return (size);

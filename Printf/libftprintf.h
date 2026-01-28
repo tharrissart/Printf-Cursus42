@@ -6,13 +6,14 @@
 /*   By: thharris <thharris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 20:51:30 by thharris          #+#    #+#             */
-/*   Updated: 2025/12/29 03:11:24 by thharris         ###   ########.fr       */
+/*   Updated: 2026/01/16 09:30:18 by thharris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
+# include <stdio.h>
 # include "libft/libft.h"
 # include <stdarg.h>
 

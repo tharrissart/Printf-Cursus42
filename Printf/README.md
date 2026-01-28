@@ -29,11 +29,12 @@ Dans la zone de texter souhaiter, nous avons differents type de texter a affiche
 
 ## Instruction
 
-Pour executer le programme, il suffit de taper la commande `make`, ce qui compile et tranforme tous les fichier `.c` en fichier `.o`.
+Pour compiler la fonction ft_printf, il suffit de taper la commande `make`, ce qui compile et tranforme tous les fichier `.c` en fichier `.o`.
 
+Ensuite faite "cc .main.c libftprintf.a" pour compiler le .a avec le main.
 Grace a cela vous pouvez executer le programme avec `./a.out` et vous verrez le texte predefinis dans le fichier `main.c`.
 
-Si vous voulez modifier des valeurs, il suffit de modifier les valeurs dans le fihier
+Si vous voulez modifier des valeurs, il suffit de modifier les valeurs dans le fichier
 `main.c`.
 
 Suite a cela executer la commande `make re` ce qui efface et reexecute la copilation des fichier `.c` en `.o`.
